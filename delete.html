@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>TapTrouble — Suppression des données / Data deletion</title>
+  <style>
+    body{font:17px/1.65 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 22px;color:#20212b;background:#fafafa}
+    h1{font-size:30px;line-height:1.2}h2{font-size:22px;margin-top:32px}a{color:#55329b;text-underline-offset:3px}
+    label{display:block;margin-top:20px}input{box-sizing:border-box;width:100%;padding:13px;border:1px solid #888;border-radius:8px;font:inherit}
+    .action{display:inline-block;background:#55329b;color:#fff;padding:14px 20px;border-radius:10px;text-decoration:none;margin:24px 0 8px}
+    .note{color:#51515d}hr{border:0;border-top:1px solid #ddd;margin:36px 0}a:focus-visible{outline:3px solid #8150d0;outline-offset:4px}
+  </style>
+</head>
+<body>
+  <nav><a href="./">Politique de confidentialité / Privacy policy</a> · <a href="#english">English</a></nav>
+  <h1>TapTrouble — Demander la suppression de vos données</h1>
+  <p>Arcail² Studio vous permet de demander la suppression de votre profil de service, de sa sauvegarde cloud et des données statistiques qui peuvent être rattachées à votre identifiant.</p>
+  <h2>Comment envoyer une demande</h2>
+  <ol>
+    <li>Dans TapTrouble, ouvrez <strong>Réglages → Confidentialité → Demander la suppression de mes données</strong>. Les identifiants disponibles sont préremplis ci-dessous.</li>
+    <li>Utilisez le bouton pour préparer un courriel à <a href="mailto:arcail2studio.contact@gmail.com">arcail2studio.contact@gmail.com</a>, puis envoyez-le depuis votre messagerie. Vous pouvez aussi écrire directement à cette adresse si vous n’avez plus accès au jeu.</li>
+    <li>Précisez si vous demandez la suppression complète du profil cloud ou seulement des statistiques. Le studio pourra vous demander des informations limitées permettant de vérifier que le profil vous appartient. N’envoyez jamais de mot de passe, de code de connexion ou de coordonnées bancaires.</li>
+  </ol>
+  <p><strong>Ouvrir cette page ne supprime rien et n’envoie aucune demande automatiquement.</strong> Nous répondons aux demandes selon les délais légaux applicables. Vous recevez une confirmation une fois la demande traitée.</p>
+  <h2>Informations pour retrouver votre profil</h2>
+  <p class="note">Ces champs restent dans votre navigateur. Ils ne sont inclus que dans le courriel que vous choisissez d’envoyer. Laissez-les vides si vous ne les connaissez pas.</p>
+  <label for="player">Identifiant du profil cloud / Cloud player ID</label><input id="player" maxlength="128" autocomplete="off" spellcheck="false">
+  <label for="analytics">Identifiant statistiques / Analytics ID</label><input id="analytics" maxlength="128" autocomplete="off" spellcheck="false">
+  <a class="action" id="request" href="mailto:arcail2studio.contact@gmail.com?subject=TapTrouble%20-%20Demande%20de%20suppression">Préparer ma demande par courriel</a>
+  <p class="note">Sans application de messagerie, copiez les identifiants et écrivez directement au contact indiqué ci-dessus.</p>
+  <h2>Ce qui est supprimé et ce qui peut être conservé</h2>
+  <ul>
+    <li>La demande complète concerne le profil Unity Authentication associé au jeu, sa progression Cloud Save et les données Unity Analytics identifiables liées à la demande.</li>
+    <li>La suppression cloud est irréversible. Avant de l’envoyer, notez vos identifiants ; pour éviter de nouvelles synchronisations, fermez le jeu pendant le traitement. Pour effacer la sauvegarde locale, utilisez les paramètres Android pour effacer les données de l’application ou désinstallez-la. Une nouvelle utilisation peut créer un nouveau profil technique.</li>
+    <li>Les achats et les données de paiement détenus par Google Play relèvent de Google. Une suppression de profil ne constitue pas un remboursement. Les pièces justificatives légalement nécessaires et la preuve du traitement de votre demande peuvent être conservées pendant la durée imposée par la réglementation.</li>
+    <li>Pour les données publicitaires traitées par Google, consultez les <a href="https://policies.google.com/privacy">outils de confidentialité Google</a>. Le studio ne peut pas supprimer un compte Google à votre place.</li>
+  </ul>
+  <hr>
+  <section id="english" lang="en">
+    <h1>TapTrouble — Request deletion of your data</h1>
+    <p>Arcail² Studio accepts requests to delete your game service profile, its cloud save and identifiable analytics data.</p>
+    <ol>
+      <li>Open <strong>Settings → Privacy → Request deletion of my data</strong> in the game. Available identifiers are filled into the fields above.</li>
+      <li>Prepare an email with the button below and send it to <a href="mailto:arcail2studio.contact@gmail.com">arcail2studio.contact@gmail.com</a>. You may also contact us directly if you no longer have access to the game.</li>
+      <li>Specify whether you request full cloud profile deletion or analytics deletion only. We may request limited information to verify that the profile belongs to you. Never send passwords, sign-in codes or payment details.</li>
+    </ol>
+    <p><strong>Visiting this page does not delete anything or send a request.</strong> Field values stay in your browser until you choose to send the email. We handle requests within applicable legal time limits and confirm their completion.</p>
+    <a class="action" id="request-en" href="mailto:arcail2studio.contact@gmail.com?subject=TapTrouble%20-%20Data%20deletion%20request">Prepare my request by email</a>
+    <p>Full deletion covers your game’s Unity Authentication profile, Cloud Save progression and identifiable Unity Analytics data related to the request. Cloud deletion is permanent. Keep a copy of your identifiers and close the game while the request is processed to avoid new synchronization. Use Android settings to clear local app data, or uninstall the app. Using the game again may create a new technical profile.</p>
+    <p>Google Play purchases and payment records remain subject to Google’s rules; deletion is not a refund. Records required by law and evidence of handling your request may be retained for legally required periods. Google’s advertising data is covered by <a href="https://policies.google.com/privacy">Google’s privacy tools</a>; we cannot delete your Google account.</p>
+  </section>
+  <script>
+    const values = new URLSearchParams(location.hash.slice(1));
+    const player = document.getElementById('player'), analytics = document.getElementById('analytics');
+    player.value = (values.get('player') || '').slice(0,128);
+    analytics.value = (values.get('analytics') || '').slice(0,128);
+    // Remove identifiers from the visible address without any network request.
+    if (location.hash.includes('=')) history.replaceState(null,'',location.pathname);
+    function updateMail(){
+      const ids = '\nCloud player ID: ' + player.value.trim() + '\nAnalytics ID: ' + analytics.value.trim();
+      const fr = 'Bonjour Arcail² Studio,\nJe souhaite demander la suppression de mes données TapTrouble.\nPortée de ma demande (profil cloud complet ou statistiques uniquement) :\n' + ids;
+      const en = 'Hello Arcail² Studio,\nI would like to request deletion of my TapTrouble data.\nScope (full cloud profile or analytics only):\n' + ids;
+      document.getElementById('request').href = 'mailto:arcail2studio.contact@gmail.com?subject=' + encodeURIComponent('TapTrouble - Demande de suppression') + '&body=' + encodeURIComponent(fr);
+      document.getElementById('request-en').href = 'mailto:arcail2studio.contact@gmail.com?subject=' + encodeURIComponent('TapTrouble - Data deletion request') + '&body=' + encodeURIComponent(en);
+    }
+    player.addEventListener('input',updateMail); analytics.addEventListener('input',updateMail); updateMail();
+    if(values.get('lang')==='en') document.getElementById('english').scrollIntoView();
+  </script>
+</body>
+</html>
